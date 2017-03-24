@@ -1,0 +1,329 @@
+Opened log file 'C:\windbg.log'
+lkd> dt -b _EPROCESS
+ntdll!_EPROCESS
+   +0x000 Pcb              : _KPROCESS
+      +0x000 Header           : _DISPATCHER_HEADER
+         +0x000 Type             : UChar
+         +0x001 Absolute         : UChar
+         +0x001 NpxIrql          : UChar
+         +0x002 Size             : UChar
+         +0x002 Hand             : UChar
+         +0x003 Inserted         : UChar
+         +0x003 DebugActive      : UChar
+         +0x000 Lock             : Int4B
+         +0x004 SignalState      : Int4B
+         +0x008 WaitListHead     : _LIST_ENTRY
+            +0x000 Flink            : Ptr64 
+            +0x008 Blink            : Ptr64 
+      +0x018 ProfileListHead  : _LIST_ENTRY
+         +0x000 Flink            : Ptr64 
+         +0x008 Blink            : Ptr64 
+      +0x028 DirectoryTableBase : Uint8B
+      +0x038 IopmOffset       : Uint2B
+      +0x040 ActiveProcessors : Uint8B
+      +0x048 KernelTime       : Uint4B
+      +0x04c UserTime         : Uint4B
+      +0x050 ReadyListHead    : _LIST_ENTRY
+         +0x000 Flink            : Ptr64 
+         +0x008 Blink            : Ptr64 
+      +0x060 SwapListEntry    : _SINGLE_LIST_ENTRY
+         +0x000 Next             : Ptr64 
+      +0x068 Reserved1        : Ptr64 
+      +0x070 ThreadListHead   : _LIST_ENTRY
+         +0x000 Flink            : Ptr64 
+         +0x008 Blink            : Ptr64 
+      +0x080 ProcessLock      : Uint8B
+      +0x088 Affinity         : Uint8B
+      +0x090 AutoAlignment    : Pos 0, 1 Bit
+      +0x090 DisableBoost     : Pos 1, 1 Bit
+      +0x090 DisableQuantum   : Pos 2, 1 Bit
+      +0x090 ReservedFlags    : Pos 3, 29 Bits
+      +0x090 ProcessFlags     : Int4B
+      +0x094 BasePriority     : Char
+      +0x095 QuantumReset     : Char
+      +0x096 State            : UChar
+      +0x097 ThreadSeed       : UChar
+      +0x098 PowerState       : UChar
+      +0x099 IdealNode        : UChar
+      +0x09a Visited          : UChar
+      +0x09b Flags            : _KEXECUTE_OPTIONS
+         +0x000 ExecuteDisable   : Pos 0, 1 Bit
+         +0x000 ExecuteEnable    : Pos 1, 1 Bit
+         +0x000 DisableThunkEmulation : Pos 2, 1 Bit
+         +0x000 Permanent        : Pos 3, 1 Bit
+         +0x000 ExecuteDispatchEnable : Pos 4, 1 Bit
+         +0x000 ImageDispatchEnable : Pos 5, 1 Bit
+         +0x000 Spare            : Pos 6, 2 Bits
+      +0x09b ExecuteOptions   : UChar
+      +0x0a0 StackCount       : Uint8B
+      +0x0a8 ProcessListEntry : _LIST_ENTRY
+         +0x000 Flink            : Ptr64 
+         +0x008 Blink            : Ptr64 
+   +0x0b8 ProcessLock      : _EX_PUSH_LOCK
+      +0x000 Locked           : Pos 0, 1 Bit
+      +0x000 Waiting          : Pos 1, 1 Bit
+      +0x000 Waking           : Pos 2, 1 Bit
+      +0x000 MultipleShared   : Pos 3, 1 Bit
+      +0x000 Shared           : Pos 4, 60 Bits
+      +0x000 Value            : Uint8B
+      +0x000 Ptr              : Ptr64 
+   +0x0c0 CreateTime       : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x0c8 ExitTime         : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x0d0 RundownProtect   : _EX_RUNDOWN_REF
+      +0x000 Count            : Uint8B
+      +0x000 Ptr              : Ptr64 
+   +0x0d8 UniqueProcessId  : Ptr64 
+   +0x0e0 ActiveProcessLinks : _LIST_ENTRY
+      +0x000 Flink            : Ptr64 
+      +0x008 Blink            : Ptr64 
+   +0x0f0 QuotaUsage       : Uint8B
+   +0x108 QuotaPeak        : Uint8B
+   +0x120 CommitCharge     : Uint8B
+   +0x128 PeakVirtualSize  : Uint8B
+   +0x130 VirtualSize      : Uint8B
+   +0x138 SessionProcessLinks : _LIST_ENTRY
+      +0x000 Flink            : Ptr64 
+      +0x008 Blink            : Ptr64 
+   +0x148 DebugPort        : Ptr64 
+   +0x150 ExceptionPort    : Ptr64 
+   +0x158 ObjectTable      : Ptr64 
+   +0x160 Token            : _EX_FAST_REF
+      +0x000 Object           : Ptr64 
+      +0x000 RefCnt           : Pos 0, 4 Bits
+      +0x000 Value            : Uint8B
+   +0x168 WorkingSetPage   : Uint8B
+   +0x170 AddressCreationLock : _KGUARDED_MUTEX
+      +0x000 Count            : Int4B
+      +0x008 Owner            : Ptr64 
+      +0x010 Contention       : Uint4B
+      +0x018 Gate             : _KGATE
+         +0x000 Header           : _DISPATCHER_HEADER
+            +0x000 Type             : UChar
+            +0x001 Absolute         : UChar
+            +0x001 NpxIrql          : UChar
+            +0x002 Size             : UChar
+            +0x002 Hand             : UChar
+            +0x003 Inserted         : UChar
+            +0x003 DebugActive      : UChar
+            +0x000 Lock             : Int4B
+            +0x004 SignalState      : Int4B
+            +0x008 WaitListHead     : _LIST_ENTRY
+               +0x000 Flink            : Ptr64 
+               +0x008 Blink            : Ptr64 
+      +0x030 KernelApcDisable : Int2B
+      +0x032 SpecialApcDisable : Int2B
+      +0x030 CombinedApcDisable : Uint4B
+   +0x1a8 HyperSpaceLock   : Uint8B
+   +0x1b0 ForkInProgress   : Ptr64 
+   +0x1b8 HardwareTrigger  : Uint8B
+   +0x1c0 PhysicalVadRoot  : Ptr64 
+   +0x1c8 CloneRoot        : Ptr64 
+   +0x1d0 NumberOfPrivatePages : Uint8B
+   +0x1d8 NumberOfLockedPages : Uint8B
+   +0x1e0 Win32Process     : Ptr64 
+   +0x1e8 Job              : Ptr64 
+   +0x1f0 SectionObject    : Ptr64 
+   +0x1f8 SectionBaseAddress : Ptr64 
+   +0x200 QuotaBlock       : Ptr64 
+   +0x208 WorkingSetWatch  : Ptr64 
+   +0x210 Win32WindowStation : Ptr64 
+   +0x218 InheritedFromUniqueProcessId : Ptr64 
+   +0x220 LdtInformation   : Ptr64 
+   +0x228 VadFreeHint      : Ptr64 
+   +0x230 VdmObjects       : Ptr64 
+   +0x238 DeviceMap        : Ptr64 
+   +0x240 Spare0           : Ptr64 
+   +0x258 PageDirectoryPte : _HARDWARE_PTE
+      +0x000 Valid            : Pos 0, 1 Bit
+      +0x000 Write            : Pos 1, 1 Bit
+      +0x000 Owner            : Pos 2, 1 Bit
+      +0x000 WriteThrough     : Pos 3, 1 Bit
+      +0x000 CacheDisable     : Pos 4, 1 Bit
+      +0x000 Accessed         : Pos 5, 1 Bit
+      +0x000 Dirty            : Pos 6, 1 Bit
+      +0x000 LargePage        : Pos 7, 1 Bit
+      +0x000 Global           : Pos 8, 1 Bit
+      +0x000 CopyOnWrite      : Pos 9, 1 Bit
+      +0x000 Prototype        : Pos 10, 1 Bit
+      +0x000 reserved0        : Pos 11, 1 Bit
+      +0x000 PageFrameNumber  : Pos 12, 28 Bits
+      +0x000 reserved1        : Pos 40, 12 Bits
+      +0x000 SoftwareWsIndex  : Pos 52, 11 Bits
+      +0x000 NoExecute        : Pos 63, 1 Bit
+   +0x258 Filler           : Uint8B
+   +0x260 Session          : Ptr64 
+   +0x268 ImageFileName    : UChar
+   +0x278 JobLinks         : _LIST_ENTRY
+      +0x000 Flink            : Ptr64 
+      +0x008 Blink            : Ptr64 
+   +0x288 LockedPagesList  : Ptr64 
+   +0x290 ThreadListHead   : _LIST_ENTRY
+      +0x000 Flink            : Ptr64 
+      +0x008 Blink            : Ptr64 
+   +0x2a0 SecurityPort     : Ptr64 
+   +0x2a8 Wow64Process     : Ptr64 
+   +0x2b0 ActiveThreads    : Uint4B
+   +0x2b4 GrantedAccess    : Uint4B
+   +0x2b8 DefaultHardErrorProcessing : Uint4B
+   +0x2bc LastThreadExitStatus : Int4B
+   +0x2c0 Peb              : Ptr64 
+   +0x2c8 PrefetchTrace    : _EX_FAST_REF
+      +0x000 Object           : Ptr64 
+      +0x000 RefCnt           : Pos 0, 4 Bits
+      +0x000 Value            : Uint8B
+   +0x2d0 ReadOperationCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x2d8 WriteOperationCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x2e0 OtherOperationCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x2e8 ReadTransferCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x2f0 WriteTransferCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x2f8 OtherTransferCount : _LARGE_INTEGER
+      +0x000 LowPart          : Uint4B
+      +0x004 HighPart         : Int4B
+      +0x000 u                : <unnamed-tag>
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+      +0x000 QuadPart         : Int8B
+   +0x300 CommitChargeLimit : Uint8B
+   +0x308 CommitChargePeak : Uint8B
+   +0x310 AweInfo          : Ptr64 
+   +0x318 SeAuditProcessCreationInfo : _SE_AUDIT_PROCESS_CREATION_INFO
+      +0x000 ImageFileName    : Ptr64 
+   +0x320 Vm               : _MMSUPPORT
+      +0x000 WorkingSetExpansionLinks : _LIST_ENTRY
+         +0x000 Flink            : Ptr64 
+         +0x008 Blink            : Ptr64 
+      +0x010 LastTrimTime     : _LARGE_INTEGER
+         +0x000 LowPart          : Uint4B
+         +0x004 HighPart         : Int4B
+         +0x000 u                : <unnamed-tag>
+            +0x000 LowPart          : Uint4B
+            +0x004 HighPart         : Int4B
+         +0x000 QuadPart         : Int8B
+      +0x018 Flags            : _MMSUPPORT_FLAGS
+         +0x000 SessionSpace     : Pos 0, 1 Bit
+         +0x000 BeingTrimmed     : Pos 1, 1 Bit
+         +0x000 SessionLeader    : Pos 2, 1 Bit
+         +0x000 TrimHard         : Pos 3, 1 Bit
+         +0x000 MaximumWorkingSetHard : Pos 4, 1 Bit
+         +0x000 ForceTrim        : Pos 5, 1 Bit
+         +0x000 MinimumWorkingSetHard : Pos 6, 1 Bit
+         +0x000 Available0       : Pos 7, 1 Bit
+         +0x001 MemoryPriority   : Pos 0, 8 Bits
+         +0x002 GrowWsleHash     : Pos 0, 1 Bit
+         +0x002 AcquiredUnsafe   : Pos 1, 1 Bit
+         +0x002 Available        : Pos 2, 14 Bits
+      +0x01c PageFaultCount   : Uint4B
+      +0x020 PeakWorkingSetSize : Uint4B
+      +0x024 GrowthSinceLastEstimate : Uint4B
+      +0x028 MinimumWorkingSetSize : Uint4B
+      +0x02c MaximumWorkingSetSize : Uint4B
+      +0x030 VmWorkingSetList : Ptr64 
+      +0x038 Claim            : Uint4B
+      +0x03c NextEstimationSlot : Uint4B
+      +0x040 NextAgingSlot    : Uint4B
+      +0x044 EstimatedAvailable : Uint4B
+      +0x048 WorkingSetSize   : Uint4B
+      +0x050 WorkingSetMutex  : _EX_PUSH_LOCK
+         +0x000 Locked           : Pos 0, 1 Bit
+         +0x000 Waiting          : Pos 1, 1 Bit
+         +0x000 Waking           : Pos 2, 1 Bit
+         +0x000 MultipleShared   : Pos 3, 1 Bit
+         +0x000 Shared           : Pos 4, 60 Bits
+         +0x000 Value            : Uint8B
+         +0x000 Ptr              : Ptr64 
+   +0x378 Spares           : Uint4B
+   +0x380 ModifiedPageCount : Uint4B
+   +0x384 JobStatus        : Uint4B
+   +0x388 Flags            : Uint4B
+   +0x388 CreateReported   : Pos 0, 1 Bit
+   +0x388 NoDebugInherit   : Pos 1, 1 Bit
+   +0x388 ProcessExiting   : Pos 2, 1 Bit
+   +0x388 ProcessDelete    : Pos 3, 1 Bit
+   +0x388 Wow64SplitPages  : Pos 4, 1 Bit
+   +0x388 VmDeleted        : Pos 5, 1 Bit
+   +0x388 OutswapEnabled   : Pos 6, 1 Bit
+   +0x388 Outswapped       : Pos 7, 1 Bit
+   +0x388 ForkFailed       : Pos 8, 1 Bit
+   +0x388 Wow64VaSpace4Gb  : Pos 9, 1 Bit
+   +0x388 AddressSpaceInitialized : Pos 10, 2 Bits
+   +0x388 SetTimerResolution : Pos 12, 1 Bit
+   +0x388 BreakOnTermination : Pos 13, 1 Bit
+   +0x388 SessionCreationUnderway : Pos 14, 1 Bit
+   +0x388 WriteWatch       : Pos 15, 1 Bit
+   +0x388 ProcessInSession : Pos 16, 1 Bit
+   +0x388 OverrideAddressSpace : Pos 17, 1 Bit
+   +0x388 HasAddressSpace  : Pos 18, 1 Bit
+   +0x388 LaunchPrefetched : Pos 19, 1 Bit
+   +0x388 InjectInpageErrors : Pos 20, 1 Bit
+   +0x388 VmTopDown        : Pos 21, 1 Bit
+   +0x388 ImageNotifyDone  : Pos 22, 1 Bit
+   +0x388 PdeUpdateNeeded  : Pos 23, 1 Bit
+   +0x388 VdmAllowed       : Pos 24, 1 Bit
+   +0x388 SmapAllowed      : Pos 25, 1 Bit
+   +0x388 CreateFailed     : Pos 26, 1 Bit
+   +0x388 DefaultIoPriority : Pos 27, 3 Bits
+   +0x388 Spare1           : Pos 30, 1 Bit
+   +0x388 Spare2           : Pos 31, 1 Bit
+   +0x38c ExitStatus       : Int4B
+   +0x390 NextPageColor    : Uint2B
+   +0x392 SubSystemMinorVersion : UChar
+   +0x393 SubSystemMajorVersion : UChar
+   +0x392 SubSystemVersion : Uint2B
+   +0x394 PriorityClass    : UChar
+   +0x398 VadRoot          : _MM_AVL_TABLE
+      +0x000 BalancedRoot     : _MMADDRESS_NODE
+         +0x000 u1               : <unnamed-tag>
+            +0x000 Balance          : Pos 0, 2 Bits
+            +0x000 Parent           : Ptr64 
+         +0x008 LeftChild        : Ptr64 
+         +0x010 RightChild       : Ptr64 
+         +0x018 StartingVpn      : Uint8B
+         +0x020 EndingVpn        : Uint8B
+      +0x028 DepthOfTree      : Pos 0, 5 Bits
+      +0x028 Unused           : Pos 5, 3 Bits
+      +0x028 NumberGenericTableElements : Pos 8, 56 Bits
+      +0x030 NodeHint         : Ptr64 
+      +0x038 NodeFreeHint     : Ptr64 
+   +0x3d8 Cookie           : Uint4B
